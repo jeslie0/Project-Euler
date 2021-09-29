@@ -1,0 +1,204 @@
+cabal-version:      2.4
+name:               Euler
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+-- license:
+author:             James Leslie
+maintainer:         jamesleslie@posteo.net
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files:
+    CHANGELOG.md
+    README.org
+
+library
+  hs-source-dirs:      code
+  exposed-modules:     Euler.Helper
+  build-depends:       base ^>=4.14.1.0,
+                       containers >= 0.6.2.1,
+                       microlens >= 0.4.12.0,
+                       microlens-platform >= 0.4.2,
+                       mtl >= 2.2.2
+
+executable Main
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0,
+                      containers >= 0.6.2.1,
+                      microlens >= 0.4.12.0,
+                      microlens-platform >= 0.4.2,
+                      mtl >= 2.2.2
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P011
+    main-is:          P011.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0,
+                      containers >= 0.6.2.1,
+                      mtl >= 2.2.2
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+
+executable P012
+    main-is:          P012.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0,
+                      containers >= 0.6.2.1,
+                      mtl >= 2.2.2
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P013
+    main-is:          P013.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P014
+    main-is:          P014.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0,
+                      containers >= 0.6.2.1,
+                      mtl >= 2.2.2
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P015
+    main-is:          P015.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P020
+    main-is:          P020.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0,
+                      mtl >= 2.2.2
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P754
+    main-is:          P754.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0,
+                      containers >= 0.6.2.1,
+                      mtl >= 2.2.2
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P016
+    main-is:          P016.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P017
+    main-is:          P017.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P018
+    main-is:          P018.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0,
+                      mtl >= 2.2.2
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P021
+    main-is:          P021.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable P023
+    main-is:          P023.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0
+    hs-source-dirs:   app
+    default-language: Haskell2010
