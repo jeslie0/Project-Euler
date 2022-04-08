@@ -4,7 +4,7 @@ module Fibonacci
   ) where
 
 fibList :: (Integral a) => [a]
-fibList = 0 : 1 : zipWith (+) fibList (tail fibList)
+fibList = 1 : 1 : zipWith (+) fibList (tail fibList)
 
 fib :: (Integral a) => Int -> a
 fib n = fibList !! n

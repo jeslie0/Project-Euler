@@ -5,7 +5,8 @@
 
 * Solutions
 - [X] [[file:app/P001.hs][001]];
-- [ ] 002;
+- [X] [[file:app/P002.hs][002]];
+- [ ] [[file:app/P003.hs][003]];
 
 
 * Posting solutions?

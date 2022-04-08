@@ -11,6 +11,27 @@ import Fibonacci
 -- not exceed four million, find the sum of the even-valued terms.
 
 -- * Solution
+-- A solution would be to efficiently enumerate all the fibonacci
+-- numbers, filter them for the even ones and then sum the
+-- up. However, we don't need to calculate every fibonacci number. It
+-- is simple to prove that if we start the fibonacci sequence with 1,
+-- 1, then the even numbers come every third term. We can then
+-- generate the recurrence that gives us exactly every third fibonacci
+-- number. A basic calculation shows that the the following recursive
+-- function computes the even fibonacci numbers:
+
+g :: (Integral a) => Int -> a
+g 0 = 0
+g 1 = 2
+g n = 4 * g (n-1) + g (n-2)
 
 
-main = print "hi"
+-- Now, we want to implement this efficiently, using a ziplist. Recall
+-- that the tail part represents the \(g(n-2)\) expression.
+evenFibList :: (Integral a) => [a]
+evenFibList = 0 : 2 : zipWith (\m n -> 4*n + m) evenFibList (tail evenFibList)
+
+solution :: (Integral a) => a
+solution = sum $ takeWhile (\n -> n < 4000000) evenFibList
+
+main = print (solution :: Int)
