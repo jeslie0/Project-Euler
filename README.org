@@ -6,8 +6,14 @@
 * Solutions
 - [X] [[file:app/P001.hs][001]];
 - [X] [[file:app/P002.hs][002]];
-- [ ] [[file:app/P003.hs][003]];
-
+- [X] [[file:app/P003.hs][003]];
+- [ ] [[file:app/P004.hs][004]];
+- [ ] 005;
+- [ ] 006;
+- [ ] 007;
+- [ ] 008;
+- [ ] 009;
+- [ ] 010;
 
 * Posting solutions?
 I believe it is seen as not in the spirit of Project Euler to post solutions online; however, it seems that there have been challenges for the first 100 problems, which I see as fair game. Maybe I won't post solutions after problem 100, but I will worry about that when I get to it.
