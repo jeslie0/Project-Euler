@@ -1,2 +1,12 @@
-#+title: My Project Euler Files
-#+description: A repository of my Project Euler work.
+#+title: My Project Euler solutions
+
+* What is this?
+[[https://projecteuler.net/][Project Euler]] is a growing collection puzzled designed to help test and improve one's coding and mathematical skills. I had previously started solving these problems; however, I didn't have a consistent structure, or any real comments on my approach. This new branch is meant to address those issues. In particular, I will be attempting to analyse the time complexity wherever possible.
+
+* Solutions
+- [X] [[file:app/P001.hs][001]];
+- [ ] 002;
+
+
+* Posting solutions?
+I believe it is seen as not in the spirit of Project Euler to post solutions online; however, it seems that there have been challenges for the first 100 problems, which I see as fair game. Maybe I won't post solutions after problem 100, but I will worry about that when I get to it.
