@@ -39,3 +39,17 @@ primeFactors n = divtest n primes
     divtest n (x:xs)
       | n `mod` x == 0 = x : divtest (n `div` x) (x:xs)
       | otherwise      = divtest n xs
+
+
+primeFactorPowers :: Integral a => a -> [(a, Int)]
+primeFactorPowers = collect . primeFactors
+  where
+    collect :: (Eq a) => [a] -> [(a,Int)]
+    collect [] = []
+    collect xs =
+      let (ns, remaining) = span (\a -> a == head xs) xs
+      in (head ns, length ns) : collect remaining
+
+primePowers2Int :: Integral a => [(a, Int)] -> a
+primePowers2Int [] = 1
+primePowers2Int ((n,i):ns) = n ^ i * primePowers2Int ns

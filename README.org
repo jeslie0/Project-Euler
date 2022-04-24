@@ -8,8 +8,8 @@
 - [X] [[file:app/P002.hs][002]];
 - [X] [[file:app/P003.hs][003]];
 - [X] [[file:app/P004.hs][004]];
-- [ ] [[file:app/P005.hs][005]];
-- [ ] [[file:app/P006.hs][006]];
+- [X] [[file:app/P005.hs][005]];
+- [X] [[file:app/P006.hs][006]];
 - [ ] [[file:app/P007.hs][007]];
 - [ ] [[file:app/P008.hs][008]];
 - [ ] [[file:app/P009.hs][009]];

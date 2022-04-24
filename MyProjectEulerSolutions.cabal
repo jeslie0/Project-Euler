@@ -93,7 +93,23 @@ executable P005
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base
+    build-depends:    base,
+                      containers,
+                      mtl,
+                      MyProjectEulerSolutions,
     hs-source-dirs:   app
     default-language: Haskell2010
     ghc-options:      -main-is P005 -O2
+    
+executable P006
+    main-is:          P006.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base
+    hs-source-dirs:   app
+    default-language: Haskell2010
+    ghc-options:      -main-is P006 -O2
