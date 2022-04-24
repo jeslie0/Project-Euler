@@ -10,7 +10,7 @@
 - [X] [[file:app/P004.hs][004]];
 - [X] [[file:app/P005.hs][005]];
 - [X] [[file:app/P006.hs][006]];
-- [ ] [[file:app/P007.hs][007]];
+- [X] [[file:app/P007.hs][007]];
 - [ ] [[file:app/P008.hs][008]];
 - [ ] [[file:app/P009.hs][009]];
 - [ ] [[file:app/P010.hs][010]];
