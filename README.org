@@ -1,5 +1,11 @@
 [[https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg]]
 #+title: My Project Euler solutions
+* Table of Contents                                                     :toc:
+- [[#what-is-this][What is this?]]
+- [[#solutions][Solutions]]
+- [[#posting-solutions][Posting solutions?]]
+- [[#license][License]]
+
 * What is this?
 [[https://projecteuler.net/][Project Euler]] is a growing collection of puzzles, designed to help test and improve one's coding and mathematical skills. I had previously started solving these problems; however, I didn't have a consistent structure, or any real comments on my approach. This new branch is meant to address those issues. In particular, I will be attempting to analyse the time complexity wherever possible.
 
@@ -11,7 +17,7 @@
 - [X] [[file:app/P005.hs][005]];
 - [X] [[file:app/P006.hs][006]];
 - [X] [[file:app/P007.hs][007]];
-- [ ] [[file:app/P008.hs][008]];
+- [X] [[file:app/P008.hs][008]];
 - [ ] [[file:app/P009.hs][009]];
 - [ ] [[file:app/P010.hs][010]];
 
