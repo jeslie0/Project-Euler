@@ -18,7 +18,7 @@
 - [X] [[file:app/P006.hs][006]];
 - [X] [[file:app/P007.hs][007]];
 - [X] [[file:app/P008.hs][008]];
-- [ ] [[file:app/P009.hs][009]];
+- [X] [[file:app/P009.hs][009]];
 - [ ] [[file:app/P010.hs][010]];
 
 * Posting solutions?
