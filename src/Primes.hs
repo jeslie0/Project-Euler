@@ -62,3 +62,16 @@ primeFactorPowers = collect . primeFactors
 primePowers2Int :: Integral a => [(a, Int)] -> a
 primePowers2Int [] = 1
 primePowers2Int ((n,i):ns) = n ^ i * primePowers2Int ns
+
+-- * Factors
+
+listOfFactors :: (Integral a) => a -> [a]
+listOfFactors n = listOfFactors' n 1
+  where
+    listOfFactors' n m
+      | m > n `div` 2  = []
+      | n `rem` m == 0 = m : listOfFactors' n (m+1)
+      | otherwise      = listOfFactors' n (m+1)
+
+numberOfFactors :: (Integral a) => a -> Int
+numberOfFactors n = product $ map ((+1) . snd) $ primeFactorPowers n

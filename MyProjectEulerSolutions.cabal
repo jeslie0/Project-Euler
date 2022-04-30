@@ -189,7 +189,9 @@ executable P012
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base
+    build-depends:    base,
+                      MyProjectEulerSolutions,
+                      mtl
     hs-source-dirs:   app
     default-language: Haskell2010
     ghc-options:      -main-is P012 -O2
