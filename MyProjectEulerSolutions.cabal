@@ -26,8 +26,10 @@ library
   exposed-modules:     Fibonacci,
                        Primes
   build-depends:       base,
+                       containers,
                        mtl,
-                       pqueue
+                       pqueue,
+                       vector
 
 executable P001
     main-is:          P001.hs
@@ -217,7 +219,23 @@ executable P014
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base
+    build-depends:    base,
+                      containers,
+                      mtl,
+                      vector
     hs-source-dirs:   app
     default-language: Haskell2010
     ghc-options:      -main-is P014 -O2
+    
+executable P015
+    main-is:          P015.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base
+    hs-source-dirs:   app
+    default-language: Haskell2010
+    ghc-options:      -main-is P015 -O2
