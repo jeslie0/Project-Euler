@@ -7,7 +7,7 @@
 
 * Solutions
 | [[file:app/P001.hs][001]] | [[file:app/P002.hs][002]] | [[file:app/P003.hs][003]] | [[file:app/P004.hs][004]] | [[file:app/P005.hs][005]] | [[file:app/P006.hs][006]] | [[file:app/P007.hs][007]] | [[file:app/P008.hs][008]] | [[file:app/P009.hs][009]] | [[file:app/P010.hs][010]] |
-| [[file:app/P011.hs][011]] | [[file:app/P012.hs][012]] | [[file:app/P013.hs][013]] | [[file:app/P014.hs][014]] | [[file:app/P015.hs][015]] | [[file:app/P016.hs][016]] | [[file:app/P017.hs][017]] | 018 | 019 | 020 |
+| [[file:app/P011.hs][011]] | [[file:app/P012.hs][012]] | [[file:app/P013.hs][013]] | [[file:app/P014.hs][014]] | [[file:app/P015.hs][015]] | [[file:app/P016.hs][016]] | [[file:app/P017.hs][017]] | [[file:app/P018.hs][018]] | 019 | 020 |
 | 021 | 022 | 023 | 024 | 025 | 026 | 027 | 028 | 029 | 030 |
 * Posting solutions?
 From what I have read, it is not in the spirit of Project Euler to post solutions online. However, this is not the case for the first 100 problems, of which constructive discussion is allowed/encouraged. What I do with problem 101+ will be decided when I get closer to completing them.

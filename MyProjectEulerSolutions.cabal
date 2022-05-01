@@ -274,7 +274,8 @@ executable P018
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base
+    build-depends:    base,
+                      vector
     hs-source-dirs:   app
     default-language: Haskell2010
     ghc-options:      -main-is P018 -O2
