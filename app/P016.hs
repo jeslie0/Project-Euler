@@ -6,6 +6,10 @@ module P016 where
 -- What is the sum of the digits of the number \(2^{1000}\)?
 
 -- * Solution
+-- A brute force solution is to simply evaluate \(2^{1000}\) as an
+-- integer, then read it to a list of digits and then sum.
+p016' :: Int
+p016' = sum (map (read . pure) (show $ 2 ^ 1000))
 
 main :: IO ()
-main = print "hi"
+main = print p016'
