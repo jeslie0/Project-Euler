@@ -1,10 +1,11 @@
   {
     description = "My Project Euler solutions, in Haskell";
 
-    inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11"; # This is to get ghc version 8.10.7, which HLS works well with.
+    inputs.nixpkgsUNSTABLE.url = "github:nixos/nixpkgs/nixos-unstable";
     inputs.flake-utils.url = "github:numtide/flake-utils";
 
-    outputs = { self, nixpkgs, flake-utils }:
+    outputs = { self, nixpkgs, nixpkgsUNSTABLE, flake-utils }:
       flake-utils.lib.eachDefaultSystem (
         system:
         let
@@ -20,7 +21,7 @@
             devShell = haskellPackages.shellFor {
               packages = p: [ self.defaultPackage.${system} ]; # This automatically pulls cabal libraries into the devshell, so they can be used in ghci
               buildInputs = with haskellPackages; [ ghc
-                                                    haskell-language-server
+                                                    nixpkgsUNSTABLE.legacyPackages.${system}.haskell-language-server
                                                     cabal-install
                                                     apply-refact
                                                     hlint
