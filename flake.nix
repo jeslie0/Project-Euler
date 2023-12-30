@@ -12,17 +12,18 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         haskellPackages = pkgs.haskellPackages;
-        packageName = "MyProjectEulerSols";
+        packageName = "project-euler";
       in
         {
-          packages.${packageName} = haskellPackages.callCabal2nix packageName self {};
 
-          defaultPackage = self.packages.${system}.${packageName};
+          packages = {
+            default = self.packages.${system}.${packageName};
+            ${packageName} = haskellPackages.callCabal2nix packageName self {};
+          };
 
           devShell = haskellPackages.shellFor {
-            packages = p: [ self.defaultPackage.${system} ]; # This automatically pulls cabal libraries into the devshell, so they can be used in ghci
-            buildInputs = with haskellPackages; [ ghc
-                                                  haskell-language-server
+            packages = p: [ self.packages.${system}.default ]; # This automatically pulls cabal libraries into the devshell, so they can be used in ghci
+            buildInputs = with haskellPackages; [ haskell-language-server
                                                   cabal-install
                                                 ];
 
