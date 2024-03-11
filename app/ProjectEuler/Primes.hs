@@ -1,4 +1,4 @@
-module Primes where
+module ProjectEuler.Primes where
 
 import qualified Data.PQueue.Prio.Min as P
 
@@ -66,12 +66,12 @@ primePowers2Int ((n,i):ns) = n ^ i * primePowers2Int ns
 -- * Factors
 
 listOfFactors :: (Integral a) => a -> [a]
-listOfFactors n = listOfFactors' n 1
+listOfFactors n = listOfFactors' 2 [1]
   where
-    listOfFactors' n m
-      | m > n `div` 2  = []
-      | n `rem` m == 0 = m : listOfFactors' n (m+1)
-      | otherwise      = listOfFactors' n (m+1)
+    listOfFactors' m acc
+      | m * m > n  = acc
+      | n `rem` m == 0 = listOfFactors' (m+1) (n `div` m : if m * m == n then acc else m : acc)
+      | otherwise      = listOfFactors' (m+1) acc
 
 numberOfFactors :: (Integral a) => a -> Int
 numberOfFactors n = product $ map ((+1) . snd) $ primeFactorPowers n

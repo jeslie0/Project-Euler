@@ -1,4 +1,4 @@
-module Problems.P022 where
+module P022 where
 
 import Criterion (Benchmark, bench, whnfIO)
 import qualified Data.ByteString as B

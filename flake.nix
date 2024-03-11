@@ -3,36 +3,75 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        haskellPackages = pkgs.haskellPackages;
-        packageName = "project-euler";
+  outputs = { self, nixpkgs }:
+    let
+      supportedSystems =
+        [ "aarch64-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ];
+
+      forAllSystems =
+        nixpkgs.lib.genAttrs supportedSystems;
+
+      nixpkgsFor = forAllSystems (system:
+        import nixpkgs {
+          inherit system;
+        });
+
+      haskellPackages = system:
+        nixpkgsFor.${system}.haskellPackages;
+
+      packageName = system: with builtins;
+        let
+          cabalFileName =
+            let
+              cabalFiles =
+                ((filter ((nixpkgsFor.${system}).lib.hasSuffix ".cabal")) (attrNames (readDir ./.)));
+            in
+              head cabalFiles;
+
+          matches =
+            (match "^.*name\:\ *([^[:space:]]*).*$" (readFile "${./.}\/${cabalFileName}"));
+        in
+          head matches;
       in
         {
+          packages =
+            forAllSystems (system:
+              let
+                pkgs =
+                  nixpkgsFor.${system};
+              in
+                {
+                  default =
+                    (haskellPackages system).callCabal2nix (packageName system) self {};
+                }
+            );
 
-          packages = {
-            default = self.packages.${system}.${packageName};
-            ${packageName} = haskellPackages.callCabal2nix packageName self {};
-          };
 
-          devShell = haskellPackages.shellFor {
-            packages = p: [ self.packages.${system}.default ]; # This automatically pulls cabal libraries into the devshell, so they can be used in ghci
-            buildInputs = with haskellPackages; [ haskell-language-server
-                                                  cabal-install
-                                                ];
+          devShell =
+            forAllSystems (system:
+              let
+                pkgs =
+                  nixpkgsFor.${system};
+              in
+                (haskellPackages system).shellFor {
+                  # The packages that the shell is for.
+                  packages = p: [
+                    self.packages.${system}.default
+                  ];
 
-            # This will build the cabal project and add it to the path. We probably don't want that to happen.
-            # inputsFrom = builtins.attrValues self.packages.${system};
+                  buildInputs = with (haskellPackages system);
+                    [ haskell-language-server
+                      cabal-install
+                    ];
 
-            # Enables Hoogle for the builtin packages.
-            withHoogle = true;
-          };
-        }
-    );
+                  # Add build inputs of the following derivations.
+                  inputsFrom = [ ];
+
+                  # Enables Hoogle for the builtin packages.
+                  withHoogle = true;
+                }
+            );
+        };
 }

@@ -1,7 +1,7 @@
 module Main where
 
 import Criterion.Main
-import Problems.P022 qualified as P022
+import P022 qualified as P022
 
 main :: IO ()
 main =

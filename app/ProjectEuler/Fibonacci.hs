@@ -1,4 +1,4 @@
-module Fibonacci
+module ProjectEuler.Fibonacci
   ( fibList,
     fib
   ) where
