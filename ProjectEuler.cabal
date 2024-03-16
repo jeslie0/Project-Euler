@@ -68,7 +68,7 @@ executable project-euler
     other-modules: ProjectEuler.Primes, ProjectEuler.Fibonacci,
                    P001, P002, P003, P004, P005, P006, P007, P008, P009,
                    P010, P011, P012, P013, P014, P015, P016, P017, P018, P019,
-                   P020, P021, P022
+                   P020, P021, P022, P023
                    -- P024, P025, P026, P027, P028, P029,
 
     -- LANGUAGE extensions used by modules in this package.
@@ -82,6 +82,7 @@ executable project-euler
                       mtl,
                       pqueue,
                       text,
+                      unordered-containers,
                       vector,
                       vector-algorithms,
                       word8
@@ -93,4 +94,4 @@ executable project-euler
     default-language: GHC2021
 
     -- GHC Options
-    ghc-options: -O2
+    ghc-options: -ddump-to-file -ddump-simpl  -ddump-cmm -ddump-asm -dsuppress-idinfo -dsuppress-coercions -dsuppress-type-applications -dsuppress-uniques -dsuppress-module-prefixes -dsuppress-ticks -ddump-simpl-stats -ddump-rule-firings -O2

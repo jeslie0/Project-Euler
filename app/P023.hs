@@ -1,9 +1,8 @@
-module P023 where
+module P023 (p023, p023Benchmark) where
 
-import Data.Foldable
-import Data.Set qualified as Set
-import Debug.Trace (trace)
+import Data.IntSet qualified as Set
 import ProjectEuler.Primes (listOfFactors)
+import Criterion (Benchmark, bench, whnf)
 
 -- * Question
 
@@ -42,14 +41,18 @@ abundantNumbers = [n | n <- [12 ..], isAbundant n]
 {-# NOINLINE abundantNumbers #-}
 
 
-abundantSumsLessThan :: Int -> Set.Set Int
+abundantSumsLessThan :: Int -> Set.IntSet
 abundantSumsLessThan limit = Set.fromList [ x + y | x <- abundantsInRange 12 limit, y <- abundantsInRange 12 (limit `div` 2), x + y <= limit]
   where
     abundantsInRange n m = dropWhile (< n) . takeWhile (<= m) $ abundantNumbers
 
 nonAbundantSums :: Int -> Int
 nonAbundantSums limit =
-  limit * (limit + 1) `div` 2 - sum (abundantSumsLessThan limit)
+  limit * (limit + 1) `div` 2 - Set.foldl' (+) 0 (abundantSumsLessThan limit)
 
 p023 :: Int
 p023 = nonAbundantSums 28123
+
+p023Benchmark :: Benchmark
+p023Benchmark =
+  bench "P023" $ whnf nonAbundantSums 28123

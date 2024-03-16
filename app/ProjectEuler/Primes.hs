@@ -1,5 +1,7 @@
 module ProjectEuler.Primes where
 
+import           GHC.List      (augment, build)
+
 import qualified Data.PQueue.Prio.Min as P
 
 -- * Primes
@@ -66,12 +68,13 @@ primePowers2Int ((n,i):ns) = n ^ i * primePowers2Int ns
 -- * Factors
 
 listOfFactors :: (Integral a) => a -> [a]
-listOfFactors n = listOfFactors' 2 [1]
+listOfFactors n = augment (combine 2) [1]
   where
-    listOfFactors' m acc
-      | m * m > n  = acc
-      | n `rem` m == 0 = listOfFactors' (m+1) (n `div` m : if m * m == n then acc else m : acc)
-      | otherwise      = listOfFactors' (m+1) acc
+    combine m cons xs
+      | m * m > n = xs
+      | n `rem` m == 0 = combine (m + 1) cons (m `cons` (if m * m == n then xs else (n `div` m) `cons` xs))
+      | otherwise = combine (m+1) cons xs
+{-# INLINE listOfFactors #-}
 
 numberOfFactors :: (Integral a) => a -> Int
 numberOfFactors n = product $ map ((+1) . snd) $ primeFactorPowers n

@@ -1,12 +1,13 @@
 module Main where
 
 import Criterion.Main
-import P022 qualified as P022
+import P023 qualified as P023
 
 main :: IO ()
 main =
+  -- print P023.p023
   defaultMain
     [ bgroup
         "Project Euler solutions"
-        [ P022.p022Benchmark ]
+        [ P023.p023Benchmark ]
     ]
