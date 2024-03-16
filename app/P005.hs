@@ -3,7 +3,7 @@ module P005 where
 import Control.Monad.State.Lazy
 import Data.List
 import qualified Data.Map as M
-import Primes
+import ProjectEuler.Primes
 
 -- * Question
 

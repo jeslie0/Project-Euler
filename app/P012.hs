@@ -1,6 +1,6 @@
 module P012 where
 
-import Primes
+import ProjectEuler.Primes
 import Data.Foldable (find)
 
 -- * Question

@@ -1,7 +1,7 @@
 module P003 where
 
 import Data.List
-import Primes
+import ProjectEuler.Primes
 
 -- * Question
 -- The prime factors of 13195 are 5, 7, 13 and 29.

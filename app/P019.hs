@@ -1,5 +1,4 @@
 module P019 where
-import GHC.Utils.Misc (count)
 -- * Question
 -- You are given the following information, but you may prefer to do
 -- some research for yourself.
@@ -98,7 +97,7 @@ leapYear n
 -- count Sundays.
 sundaysOnStartOfMonth :: Days -> Bool -> Int
 sundaysOnStartOfMonth day bool =
-  count (== Sun) $
+  length . filter (== Sun) $
   scanl (\d n -> compose succ n d) day $
   map ((\n -> mod n 7) . monthLength bool) [Jan .. Nov]
 

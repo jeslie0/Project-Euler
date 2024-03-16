@@ -1,6 +1,6 @@
 module P010 where
 
-import Primes
+import ProjectEuler.Primes
 -- * Question
 -- The sum of the primes below 10 is \(2 + 3 + 5 + 7 = 17\).
 --
